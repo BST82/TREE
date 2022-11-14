@@ -23,13 +23,13 @@ inOrder(root->right);
 }
 }
 int main(){
- struct Node* root = newNode(1);
-    root->left = newNode(2);
-    root->right = newNode(3);
-    root->left->left = newNode(4);
-    root->left->right = newNode(5);
-      root->right->left = newNode(6);
-    root->right->right = newNode(7);
+ struct Node* root=newNode(5);
+root->left=newNode(3);
+root->right=newNode(7);
+root->left->right=newNode(9);
+root->left->right->left=newNode(6);
+root->right->left=newNode(4);
+root->right->right=newNode(2);
   cout << "Inorder traversal of binary tree is : ";
     inOrder(root);
 
