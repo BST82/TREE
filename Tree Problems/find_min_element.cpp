@@ -12,17 +12,17 @@ Node* newNode(int data){
   return temp;
 }
 
-int findMax(struct Node* root)
+int findMin(struct Node* root)
   {
     if(root==NULL){ return -1;}
 
     Node* temp=root;
     Node* prevtemp;
-    int maxi=INT_MIN;
+    int mini=INT_MAX;
 
     while(temp!=NULL){
         if(temp->left==NULL){
-            maxi=max(maxi,temp->data);
+            mini=min(mini,temp->data);
             temp=temp->right;
         }else{
             prevtemp=temp->left;
@@ -35,12 +35,12 @@ int findMax(struct Node* root)
                 temp=temp->left;
             }else{
                 prevtemp->right=NULL;
-                maxi=max(maxi,temp->data);
+                mini=min(mini,temp->data);
                 temp=temp->right;
             }
         }
     }
-    return maxi;
+    return mini;
   }
 
 int main(){
@@ -51,11 +51,10 @@ root->right=newNode(7);
 root->left->right=newNode(9);
 root->left->right->left=newNode(6);
 root->right->left=newNode(4);
-root->right->right=newNode(9);
+root->right->right=newNode(92);
 
-cout<<"Maximum element is : "<<findMax(root);
+cout<<"Maximum element is : "<<findMin(root);
 }
-
 //without recursion 
 //TC: O(N)
 //SC : O(1)
