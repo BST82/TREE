@@ -23,7 +23,7 @@ int main(){
  root->left=newNoed(1);
  root->right=newNoed(1);
  root->left->left=newNoed(1);
- root->right->right=newNoed(8);
+ root->right->right=newNoed(1);
 
  cout<<univalued_Binart_Tree(root);
 }
