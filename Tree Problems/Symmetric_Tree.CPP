@@ -19,25 +19,18 @@ struct Node{
     return symmetric_Tree(left->left,right->right) && symmetric_Tree(left->left,right->right);
  }
 
-bool sys(Node* root){
+bool check_symmetrick(Node* root){
     return (root==NULL) || symmetric_Tree(root->left,root->right);
 }
 int main(){
-struct Node* L=newNode(5);
-L->left=newNode(3);
-L->right=newNode(7);
-L->left->right=newNode(9);
-L->left->right->left=newNode(6);
-L->right->left=newNode(4);
-L->right->right=newNode(2);
+struct Node* root=newNode(1);
+root->left=newNode(2);
+root->right=newNode(2);
+root->left->left=newNode(3);
+root->left->right=newNode(4);
+root->right->left=newNode(4);
+root->right->right=newNode(3);
 
-struct Node* R=newNode(5);
-R->left=newNode(3);
-R->right=newNode(7);
-R->left->right=newNode(9);
-R->left->right->left=newNode(6);
-R->right->left=newNode(4);
-R->right->right=newNode(2);
-cout<<symmetric_Tree(L,R);
+cout<<check_symmetrick(root);
 }
 
