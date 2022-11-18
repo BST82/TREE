@@ -60,12 +60,13 @@ int countLeaves(Node* root)
  return count;
 }
 int main(){
+    cout<<"Enter wlements of tree : ";
     int t;
     cin>>t;
     while(t--){
         string s;
         getline(cin,s);
         Node* root =treeInput(s);
-        cout<<countLeaves(root)<<endl;
+        cout<<"Total count of leaves in Binary Tree : "<<countLeaves(root)<<endl;
     }
 }
