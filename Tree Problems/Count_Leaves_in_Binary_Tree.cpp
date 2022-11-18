@@ -9,7 +9,8 @@ struct Node{
 Node * newNode(int data){
     Node* temp= new Node;
     temp->data=data;
-    temp->left=temp->right=NULL;
+    temp->left=NULL;
+    temp->right=NULL;
 
     return temp;
 }
@@ -41,6 +42,7 @@ while(!Q.empty() && i<s1.size()){
     s2=s1[i];
     if(s2!="N"){
         currNode->right=newNode(stoi(s2));
+        Q.push(currNode->right);
     }
     i++;
 }
